@@ -1,4 +1,12 @@
-//수업내용 O
+//수업 내용입니다. - 내 진심 담은 하트 버튼에 알림창 코딩해보기!
+
+const heart = document.getElementById("heart");
+heart.addEventListener("click", () => {
+  alert("똑순이 너 최고야 알지?!");
+});
+
+// 수업내용이 아닙니다.
+
 let stars = 100;
 
 for (let i = 0; i <= stars; i++) {
@@ -25,27 +33,16 @@ function getStarPosition() {
   return { x: randomX, y: randowY };
 }
 
-// 수업내용 X
 const logo = document.getElementById("logo");
 logo.addEventListener("click", () => {
   window.open("https://wecode.co.kr/");
 });
 
-const heart = document.getElementById("heart");
-heart.addEventListener("click", () => {
-  alert("똑순아 사랑해 내 마음 받아줘");
-});
-
 const startButton = document.getElementById("startButton");
 startButton.addEventListener("click", () => getStarted());
 
-window.speechSynthesis.cancel();
-
 function getStarted() {
   startButton.remove();
-
-  const soundTrack = new Audio("theme.mp3");
-  soundTrack.play();
 
   const intro = document.getElementById("intro");
   intro.style.animation = "intro 2s ease-out 1s";
@@ -64,15 +61,4 @@ function getStarted() {
 
   const text = document.getElementById("text");
   text.style.animation = `scroll ${playTime}s linear 12s`;
-
-  function textToSpeech() {
-    const text = document.getElementById("loveYou").innerText;
-    const speechMsg = new SpeechSynthesisUtterance(text);
-    speechMsg.rate = 1.1;
-    window.speechSynthesis.speak(speechMsg);
-  }
-
-  setTimeout(() => {
-    textToSpeech();
-  }, 14500);
 }
