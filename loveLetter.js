@@ -2,7 +2,7 @@
 
 const heart = document.getElementById("heart");
 heart.addEventListener("click", () => {
-  alert("똑순이 너 최고야 알지?!");
+  alert("똑순이 너 최고야 알지?!!!");
 });
 
 // 수업내용이 아닙니다.
